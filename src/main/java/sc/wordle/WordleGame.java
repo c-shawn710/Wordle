@@ -40,7 +40,7 @@ public class WordleGame {
 
             //Check for win
             if (guess.equalsIgnoreCase(secretWord)) {
-                System.out.println("You guessed the correct word in " + attempts + "attempt(s)!");
+                System.out.println("You guessed the correct word in " + attempts + " attempt(s)!");
                 return; //Exit loop
             }
             attempts++;
