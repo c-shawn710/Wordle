@@ -30,7 +30,7 @@ public class WordleGame {
             String guess = scanner.nextLine().toLowerCase();
 
             //Input validation
-            if (guess.length() != 5 || !guess.matches("[a-zA-z]+")) {
+            if (guess.length() != 5 || !guess.matches("[a-zA-Z]+")) {
                 System.out.println("Invalid input. Please enter a 5-letter word.\n");
                 continue; //Skip the rest of the loop, don't increment attempts
             }
@@ -41,8 +41,8 @@ public class WordleGame {
 
             //Check for win
             if (guess.equalsIgnoreCase(secretWord)) {
-                System.out.println("You guessed the correct word in " + (attempts) + "attempt(s)!");
-                return;
+                System.out.println("You guessed the correct word in " + attempts + "attempt(s)!");
+                return; //Exit loop
             }
             attempts++;
         }
