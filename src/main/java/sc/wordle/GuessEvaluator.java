@@ -28,6 +28,5 @@ public class GuessEvaluator {
             }
         }
         return feedback.toString(); //Turn StringBuilder back to a String
-
     }
 }

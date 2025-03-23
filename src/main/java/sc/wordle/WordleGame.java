@@ -3,14 +3,12 @@ package sc.wordle;
 import java.util.Scanner;
 
 public class WordleGame {
-    private WordManager wordManager;
     private GuessEvaluator guessEvaluator;
     private Scanner scanner;
     private String secretWord;
-    private final int maxAttempts = 5;
+    private static final int maxAttempts = 5;
 
-    public WordleGame(WordManager wordManager, GuessEvaluator guessEvaluator, Scanner scanner, String secretWord) {
-        this.wordManager = wordManager;
+    public WordleGame(GuessEvaluator guessEvaluator, Scanner scanner, String secretWord) {
         this.guessEvaluator = guessEvaluator;
         this.scanner = scanner;
         this.secretWord = secretWord;
@@ -26,8 +24,9 @@ public class WordleGame {
 
         int attempts = 1;
         while (attempts <= maxAttempts) {
-            System.out.println("Enter guess #" + (attempts) + ": ");
+            System.out.print("Enter guess #" + (attempts) + ": ");
             String guess = scanner.nextLine().toLowerCase();
+            System.out.println();
 
             //Input validation
             if (guess.length() != 5 || !guess.matches("[a-zA-Z]+")) {
@@ -37,7 +36,7 @@ public class WordleGame {
 
             //Evaluate the guess
             String feedback = guessEvaluator.evaluateGuess(guess, secretWord);
-            System.out.println("Feedback: " + feedback + "\n");
+            System.out.println(feedback);
 
             //Check for win
             if (guess.equalsIgnoreCase(secretWord)) {
@@ -48,6 +47,6 @@ public class WordleGame {
         }
 
         //All attempts used
-        System.out.println("No more attempts. Your word was: " + secretWord);
+        System.out.println("No more attempts. Your word was: " + secretWord.toUpperCase());
     }
 }

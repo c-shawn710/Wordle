@@ -10,7 +10,7 @@ public class Main {
         String secretWord = wordManager.selectRandomWord();
 
         //Create and start the game
-        WordleGame game = new WordleGame(wordManager, guessEvaluator, scanner, secretWord);
+        WordleGame game = new WordleGame(guessEvaluator, scanner, secretWord);
         game.start();
         scanner.close();
     }
