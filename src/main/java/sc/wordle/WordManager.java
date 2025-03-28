@@ -38,9 +38,6 @@ public class WordManager {
      * from the list.
      */
     public String selectRandomWord() {
-        if (words.isEmpty()) {
-            return "No words available!";
-        }
         Random random = new Random();
         return words.get(random.nextInt(words.size()));
     }
