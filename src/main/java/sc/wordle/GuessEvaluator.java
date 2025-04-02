@@ -20,7 +20,7 @@ public class GuessEvaluator {
             char actualChar = secretWord.charAt(i);
 
             if (guessedChar == actualChar) {
-                feedback.append(Character.toUpperCase(guessedChar)).append(" ");    //Character is a utility class for working with char values. Can use it to check if digit, check if letter, check if lower/uppercase, and in our case, we use it to make our characters upper/lowercase
+                feedback.append(Character.toUpperCase(guessedChar)).append(" ");    //Character is a utility class for working with char values. Can use it to "check if digit", "check if letter", "check if lower/uppercase", and in our case, we use it to make our characters upper/lowercase
             } else if (secretWord.contains(String.valueOf(guessedChar))) { //contains() is part of the String class. But guessedChar is a char, so we use String.valueOf to convert it into a String.
                 feedback.append(Character.toLowerCase(guessedChar)).append(" ");
             } else {
