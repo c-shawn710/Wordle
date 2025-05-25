@@ -3,13 +3,11 @@ package sc.wordle;
 import java.util.Scanner;
 
 public class WordleGame {
-    private GuessEvaluator guessEvaluator;
     private Scanner scanner;
     private String secretWord;
     private static final int maxAttempts = 5;
 
-    public WordleGame(GuessEvaluator guessEvaluator, Scanner scanner, String secretWord) {
-        this.guessEvaluator = guessEvaluator;
+    public WordleGame(Scanner scanner, String secretWord) {
         this.scanner = scanner;
         this.secretWord = secretWord;
     }
@@ -35,7 +33,7 @@ public class WordleGame {
             }
 
             //Evaluate the guess
-            String feedback = guessEvaluator.evaluateGuess(guess, secretWord);
+            String feedback = GuessEvaluator.evaluateGuess(guess, secretWord);
             System.out.println(feedback);
 
             //Check for win

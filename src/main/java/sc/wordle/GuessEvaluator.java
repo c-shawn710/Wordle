@@ -12,7 +12,7 @@ public class GuessEvaluator {
      * @param secretWord The actual word to guess.
      * @return A formatted string showing feedback for each letter.
      * */
-    public String evaluateGuess(String guess, String secretWord) {
+    public static String evaluateGuess(String guess, String secretWord) {
         StringBuilder feedback = new StringBuilder();
 
         for (int i = 0; i < guess.length(); i++) {  //For each loop is to loop through each letter in the 'guess'

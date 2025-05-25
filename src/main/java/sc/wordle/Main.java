@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         WordManager wordManager = new WordManager();
-        GuessEvaluator guessEvaluator = new GuessEvaluator();
         Scanner scanner = new Scanner(System.in);
 
         boolean playAgain = true;
@@ -13,7 +12,7 @@ public class Main {
             String secretWord = wordManager.selectRandomWord();
 
             //Create and start the game
-            WordleGame game = new WordleGame(guessEvaluator, scanner, secretWord);
+            WordleGame game = new WordleGame(scanner, secretWord);
             game.start();
 
             while (true) {
